@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo de redes: Modelo OSI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #F4F4F4;
+            background: #2c3e50;
+            color: white;
+            padding: 40px;
+        }
+        h1 { text-align: center; 
+            color: #ecf0f1;
+        }
+        table {width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 20px; 
+            background: #34495e ;
+        }
+        th, td { 
+            padding: 15px; 
+            border: 1px solid #455a64; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #1abc9c; 
+            color: white; 
+            text-transform: uppercase;
+        }
+        
+        .host {
+            background-color: #2980b9;
+        }
+        .media {
+            background-color: #d35400;
+        }
+        tr:hover { 
+            filter: brightness(1.2);
+            transition: 0.3s;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            text-align: center;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guia de Referencia: Modelo OSI</h1>
+    <p style="text-align: center;">Estudo sobre a padronização de sistema de comunicação em redes</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Nível</th>
+                <th>Camada</th>
+                <th>Função Principal</th>
+                <th>Exemplo (PDU)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="host">
+                <td>7</td>
+                <td>Aplicação</td>
+                <td>Interface direta com o usuário (HTTP, FTP, SMTP, etc.)</td>
+                <td>Dados</td>
+            </tr>
+            <tr class="host">
+                <td>6</td>
+                <td>Apresentação</td>
+                <td>Tradução, criptografia e compressão de dados.</td>
+                <td>Dados</td>
+            </tr>
+            <tr class="host">
+                <td>5</td>
+                <td>Sessão</td>
+                <td>Gerenciamento de fluxo de dados entre apps.</td>
+                <td>Dados</td>
+            </tr>
+            <tr class="media">
+                <td>4</td>
+                <td>Transporte</td>
+                <td>Transferência fim-a-fim e controle de erros (TCP/UDP).</td>
+                <td>Segmentos</td>
+            </tr>
+            <tr class="media">
+                <td>3</td>
+                <td>Rede</td>
+                <td>Roteamento de pacotes e endereçamento lógico(IP).</td>
+                <td>Pacotes</td>
+            </tr>
+            <tr class="media">
+                <td>2</td>
+                <td>Enlace</td>
+                <td>Enderçamento fisico (MAC) e controle de fluxo</td>
+                <td>Quadros (Frames)</td>
+            </tr>
+            <tr class="media">
+                <td>1</td>
+                <td>Fisica</td>
+                <td>Transmissão de bits pelo meio físico (Cabos, Rádio)</td>
+                <td>Bits</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footer">
+        <p>Anotações de Aula - 1° Semestre ADS | Renan Bernardi</p>
+        <p>⚠️ <em>Conteúdo para fins acadêmicos</em></p>
+    </div>
+</body>
+</html>

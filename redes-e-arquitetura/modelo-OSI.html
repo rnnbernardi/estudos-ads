@@ -66,43 +66,43 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="host">
+            <tr class="host" id="camada7">
                 <td>7</td>
                 <td>Aplicação</td>
                 <td>Interface direta com o usuário (HTTP, FTP, SMTP, etc.)</td>
                 <td>Dados</td>
             </tr>
-            <tr class="host">
+            <tr class="host" id="camada6">
                 <td>6</td>
                 <td>Apresentação</td>
                 <td>Tradução, criptografia e compressão de dados.</td>
                 <td>Dados</td>
             </tr>
-            <tr class="host">
+            <tr class="host" id="camada5">
                 <td>5</td>
                 <td>Sessão</td>
                 <td>Gerenciamento de fluxo de dados entre apps.</td>
                 <td>Dados</td>
             </tr>
-            <tr class="media">
+            <tr class="media" id="camada4">
                 <td>4</td>
                 <td>Transporte</td>
                 <td>Transferência fim-a-fim e controle de erros (TCP/UDP).</td>
                 <td>Segmentos</td>
             </tr>
-            <tr class="media">
+            <tr class="media" id="camada3">
                 <td>3</td>
                 <td>Rede</td>
                 <td>Roteamento de pacotes e endereçamento lógico(IP).</td>
                 <td>Pacotes</td>
             </tr>
-            <tr class="media">
+            <tr class="media" id="camada2">
                 <td>2</td>
                 <td>Enlace</td>
                 <td>Enderçamento fisico (MAC) e controle de fluxo</td>
                 <td>Quadros (Frames)</td>
             </tr>
-            <tr class="media">
+            <tr class="media" id="camada1">
                 <td>1</td>
                 <td>Fisica</td>
                 <td>Transmissão de bits pelo meio físico (Cabos, Rádio)</td>
@@ -110,6 +110,60 @@
             </tr>
         </tbody>
     </table>
+    <p id="mensagem-explicativa">Clique em uma camada para saber mais...</p>
+    <script>
+        const camada7 = document.getElementById('camada7');
+        const exibicaoMensagem = document.getElementById('mensagem-explicativa');
+
+        camada7.addEventListener('click', function(){
+            exibicaoMensagem.innerText = "Camada 7 (Aplicacação): É a interface direta com o Usuário (navegador, email).";
+            exibicaoMensagem.style.color = "#1abc9c";
+            exibicaoMensagem.style.fontWeight = "bold";
+        });
+        const camada6 = document.getElementById('camada6');
+
+        camada6.addEventListener('click', function(){
+            exibicaoMensagem.innerText = "Camada 6 (Apresentação): Responsável pela tradução, compressão e criptografia dos dados. Garante que a informação seja legível para quem a recebe.";
+            exibicaoMensagem.style.color = "#1abc9c";
+            exibicaoMensagem.style.fontWeight = "bold";
+        });
+        const camada5 = document.getElementById('camada5');
+
+        camada5.addEventListener('click', function(){
+            exibicaoMensagem.innerText = "Camada 5 (Sessão): Estabelece, gerencia e termina as conexões (sessões) entre os aplicativos em cada extremidade da comunicação.";
+            exibicaoMensagem.style.color = "#1abc9c";
+            exibicaoMensagem.style.fontWeight = "bold";
+        });
+        const camada4 = document.getElementById('camada4');
+
+        camada4.addEventListener('click', function(){
+            exibicaoMensagem.innerText = "camada 4 (Transporte): Garante a entrega das mensagens de ponta a ponta com controle de erros e fluxo. É aqui que atuam o TCP e o UDP.";
+            exibicaoMensagem.style.color = "#1abc9c";
+            exibicaoMensagem.style.fontWeight = "bold";
+        });
+        const camada3 = document.getElementById('camada3');
+
+        camada3.addEventListener('click', function(){
+            exibicaoMensagem.innerText = "camada 3 (Rede): Cuida do endereçamento lógico (IP) e do roteamento, decidindo qual o melhor caminho para o pacote chegar ao destino.";
+            exibicaoMensagem.style.color = "#1abc9c";
+            exibicaoMensagem.style.fontWeight = "bold";
+        });
+        const camada2 = document.getElementById('camada2');
+
+        camada2.addEventListener('click', function(){
+            exibicaoMensagem.innerText = "camada 2 (Enlace): Organiza os dados em quadros (frames) e lida com o endereçamento físico (MAC Address) e erros na transmissão física.";
+            exibicaoMensagem.style.color = "#1abc9c";
+            exibicaoMensagem.style.fontWeight = "bold";
+        });
+        const camada1 = document.getElementById('camada1');
+
+        camada1.addEventListener('click', function(){
+            exibicaoMensagem.innerText = "camada 1 (Física): Define as especificações elétricas e mecânicas do meio de transmissão. Aqui os dados são apenas bits (0 e 1) viajando por cabos ou ondas de rádio.";
+            exibicaoMensagem.style.color = "#1abc9c";
+            exibicaoMensagem.style.fontWeight = "bold";
+        });
+        
+    </script>
     <div class="footer">
         <p>Anotações de Aula - 1° Semestre ADS | Renan Bernardi</p>
         <p>⚠️ <em>Conteúdo para fins acadêmicos</em></p>

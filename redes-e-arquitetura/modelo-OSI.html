@@ -113,51 +113,99 @@
     <p id="mensagem-explicativa">Clique em uma camada para saber mais...</p>
     <script>
         const exibicaoMensagem = document.getElementById('mensagem-explicativa');
-        const camada7 = document.getElementById('camada7');
-        const camada6 = document.getElementById('camada6');
-        const camada5 = document.getElementById('camada5');
-        const camada4 = document.getElementById('camada4');
-        const camada3 = document.getElementById('camada3');
-        const camada2 = document.getElementById('camada2');
-        const camada1 = document.getElementById('camada1');
+        const camada7 = {
+            elementoClicado: document.getElementById('camada7'),
+            nome: "Aplicação",
+            funcao: "Interface para os aplicativos.",
+            protocolos: "HTTPS, DNS, FTP"
+        };
+        const camada6 = {
+            elementoClicado: document.getElementById('camada6'),
+            nome:"Apresentação",
+            funcao:"Tradução, criptografia e compressão de dados.",
+            protocolos:"Dados"
+        };
+        const camada5 = {
+            elementoClicado:document.getElementById('camada5'),
+            nome:"Sessão",
+            funcao:"Gerenciamento de fluxo de dados entre apps.",
+            protocolos:"Dados"
+        };
+        const camada4 = {
+            elementoClicado: document.getElementById('camada4'),
+            nome:"Transporte",
+            funcao:"Transferência fim-a-fim e controle de erros (TCP/UDP).",
+            protocolos:"Segmentos"
+        };
+        const camada3 = {
+            elementoClicado: document.getElementById('camada3'),
+            nome: "Rede",
+            funcao: "Roteamento de pacotes e endereçamento lógico(IP).",
+            equipamento:"roteador",
+            protocolos:"IP (IPv4/IPv6), ICMP, ARP"
+        };
+        const camada2 = {
+            elementoClicado: document.getElementById('camada2'),
+            nome:"Enlace",
+            funcao:"Enderçamento fisico (MAC) e controle de fluxo.",
+            equipamento:"Switch",
+            protocolos:"Quadros (Frames)"
+        };
+        const camada1 = {
+            elementoClicado: document.getElementById('camada1'),
+            nome:"Fisica",
+            funcao:"Transmissão de bits pelo meio físico (Cabos, Rádio).",
+            equipamento:"Hub/Cabos/Repetidores",
+            protocolos:"Bits"
+        };
+        
 
-        function atualizarDescricacao(mensagem, elementoClicado) {
-            exibicaoMensagem.innerText = mensagem;
+        function atualizarDescricacao(camada) {
+            let texto = `Função: ${camada.funcao} \n`;
+            texto += `Protocolos/PDU: ${camada.protocolos}`
+
+            if (camada.equipamento){
+                texto += `\nEquipamento: ${camada.equipamento}`;
+            }
+
+            exibicaoMensagem.innerText = texto; //Para exibir a mensagem da função dentro do objeto criado
             exibicaoMensagem.style.color = "#1abc9c";
             exibicaoMensagem.style.fontWeight = "bold";
-            elementoClicado.style.backgroundColor = "#1abc9c";
+            camada.elementoClicado.style.backgroundColor = "#1abc9c";
+
+            console.log("Protocolos da camada " + camada.nome + ": " + camada.protocolos);
         }
         
 
-        camada7.addEventListener('click', function(){
-            atualizarDescricacao("Camada 7 (Aplicacação): É a interface direta com o Usuário (navegador, email).", camada7);
+        camada7.elementoClicado.addEventListener('click', function(){
+            atualizarDescricacao(camada7);
         });
         
-        camada6.addEventListener('click', function(){
-            atualizarDescricacao("Camada 6 (Apresentação): Responsável pela tradução, compressão e criptografia dos dados. Garante que a informação seja legível para quem a recebe.", camada6);
+        camada6.elementoClicado.addEventListener('click', function(){
+            atualizarDescricacao(camada6);
 
         });
 
-        camada5.addEventListener('click', function(){
-            atualizarDescricacao("Camada 5 (Sessão): Estabelece, gerencia e termina as conexões (sessões) entre os aplicativos em cada extremidade da comunicação.", camada5);
+        camada5.elementoClicado.addEventListener('click', function(){
+            atualizarDescricacao(camada5);
 
         });
 
-        camada4.addEventListener('click', function(){
-            atualizarDescricacao("camada 4 (Transporte): Garante a entrega das mensagens de ponta a ponta com controle de erros e fluxo. É aqui que atuam o TCP e o UDP.", camada4);
+        camada4.elementoClicado.addEventListener('click', function(){
+            atualizarDescricacao(camada4);
 
         });
 
-        camada3.addEventListener('click', function(){
-            atualizarDescricacao("camada 3 (Rede): Cuida do endereçamento lógico (IP) e do roteamento, decidindo qual o melhor caminho para o pacote chegar ao destino.", camada3);
+        camada3.elementoClicado.addEventListener('click', function(){
+            atualizarDescricacao(camada3);
         });
 
-        camada2.addEventListener('click', function(){
-            atualizarDescricacao("camada 2 (Enlace): Organiza os dados em quadros (frames) e lida com o endereçamento físico (MAC Address) e erros na transmissão física.", camada2);
+        camada2.elementoClicado.addEventListener('click', function(){
+            atualizarDescricacao(camada2);
         });
 
-        camada1.addEventListener('click', function(){
-            atualizarDescricacao("camada 1 (Física): Define as especificações elétricas e mecânicas do meio de transmissão. Aqui os dados são apenas bits (0 e 1) viajando por cabos ou ondas de rádio.", camada1);
+        camada1.elementoClicado.addEventListener('click', function(){
+            atualizarDescricacao(camada1);
 
         });
         
